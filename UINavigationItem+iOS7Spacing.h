@@ -8,5 +8,8 @@
 #import <Foundation/Foundation.h>
 
 @interface UINavigationItem (iOS7Spacing)
-
+- (void) setOriginalRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem;
+- (void) setOriginalRightBarButtonItems:(NSArray *)rightBarButtonItems;
+- (void) setOriginalLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem;
+- (void) setOriginalLeftBarButtonItems:(NSArray *)leftBarButtonItems;
 @end

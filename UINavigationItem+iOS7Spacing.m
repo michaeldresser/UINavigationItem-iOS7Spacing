@@ -94,4 +94,23 @@
     [self mk_swizzle:@selector(setRightBarButtonItems:)];
 }
 
+- (void) setOriginalRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem
+{
+    [self mk_setRightBarButtonItem: rightBarButtonItem];
+}
+
+- (void) setOriginalRightBarButtonItems:(NSArray *)rightBarButtonItems
+{
+    [self mk_setRightBarButtonItems: rightBarButtonItems];
+}
+
+- (void) setOriginalLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem
+{
+    [self mk_setLeftBarButtonItem: leftBarButtonItem];
+}
+
+- (void) setOriginalLeftBarButtonItems:(NSArray *)leftBarButtonItems
+{
+    [self mk_setLeftBarButtonItems: leftBarButtonItems];
+}
 @end
