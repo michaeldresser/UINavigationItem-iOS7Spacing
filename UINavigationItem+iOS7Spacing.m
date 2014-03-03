@@ -76,6 +76,19 @@
     }
 }
 
+- (UIBarButtonItem *) mk_rightBarButtonItem
+{
+    if ([self isIOS7])
+    {
+        return [self rightBarButtonItems][1];
+    }
+    else
+    {
+        return [self mk_rightBarButtonItem];
+    }
+}
+
+
 + (void)mk_swizzle:(SEL)aSelector
 {
     SEL bSelector = NSSelectorFromString([NSString stringWithFormat:@"mk_%@", NSStringFromSelector(aSelector)]);
@@ -92,6 +105,7 @@
     [self mk_swizzle:@selector(setLeftBarButtonItems:)];
     [self mk_swizzle:@selector(setRightBarButtonItem:)];
     [self mk_swizzle:@selector(setRightBarButtonItems:)];
+    [self mk_swizzle:@selector(rightBarButtonItem)];
 }
 
 - (void) setOriginalRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem
