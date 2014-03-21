@@ -80,7 +80,7 @@
 {
     if ([self isIOS7])
     {
-        return [self rightBarButtonItems][1];
+        return [[self rightBarButtonItems] lastObject];
     }
     else
     {
