@@ -88,6 +88,17 @@
     }
 }
 
+- (UIBarButtonItem *) mk_leftBarButtonItem
+{
+    if ([self isIOS7])
+    {
+        return [[self leftBarButtonItems] lastObject];
+    }
+    else
+    {
+        return [self mk_leftBarButtonItem];
+    }
+}
 
 + (void)mk_swizzle:(SEL)aSelector
 {
@@ -106,6 +117,7 @@
     [self mk_swizzle:@selector(setRightBarButtonItem:)];
     [self mk_swizzle:@selector(setRightBarButtonItems:)];
     [self mk_swizzle:@selector(rightBarButtonItem)];
+    [self mk_swizzle:@selector(leftBarButtonItem)];
 }
 
 - (void) setOriginalRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem
